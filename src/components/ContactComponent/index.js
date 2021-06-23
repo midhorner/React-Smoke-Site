@@ -77,6 +77,13 @@ class Contact extends Component {
           .
           <br />
           <br />
+          For reservation information{" "}
+          <RLink style={{ textDecoration: "none" }} to="/reservations">
+            Click Here
+          </RLink>
+          .
+          <br />
+          <br />
           For career information{" "}
           <MiscLink onClick={this.scrollTo}>Click Here</MiscLink>!
           <br />
@@ -184,6 +191,7 @@ class Contact extends Component {
               <option>Busser</option>
               <option>Server</option>
               <option disabled>Bartender</option>
+              <option>MISC</option>
             </DropDown>
           </FormWrap>
           <FormWrap>

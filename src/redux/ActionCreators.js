@@ -3,8 +3,26 @@ import { baseUrl } from "../shared/baseUrl";
 
 export const fetchCocktails = () => (dispatch) => {
   return fetch(baseUrl + "cocktails")
+    .then(
+      (response) => {
+        if (response.ok) {
+          return response;
+        } else {
+          const error = new Error(
+            `Error ${response.status}: ${response.statusText}`
+          );
+          error.response = response;
+          throw error;
+        }
+      },
+      (error) => {
+        const errMess = new Error(error.message);
+        throw errMess;
+      }
+    )
     .then((response) => response.json())
-    .then((cocktails) => dispatch(addCocktails(cocktails)));
+    .then((cocktails) => dispatch(addCocktails(cocktails)))
+    .catch((error) => dispatch(cocktailsFailed(error.message)));
 };
 
 export const addCocktails = (cocktails) => ({
@@ -12,15 +30,43 @@ export const addCocktails = (cocktails) => ({
   payload: cocktails,
 });
 
+export const cocktailsFailed = (errMess) => ({
+  type: ActionTypes.COCKTAILS_FAILED,
+  payload: errMess,
+});
+
 export const fetchTacos = () => (dispatch) => {
   return fetch(baseUrl + "tacos")
+    .then(
+      (response) => {
+        if (response.ok) {
+          return response;
+        } else {
+          const error = new Error(
+            `Error ${response.status}: ${response.statusText}`
+          );
+          error.response = response;
+          throw error;
+        }
+      },
+      (error) => {
+        const errMess = new Error(error.message);
+        throw errMess;
+      }
+    )
     .then((response) => response.json())
-    .then((tacos) => dispatch(addTacos(tacos)));
+    .then((tacos) => dispatch(addTacos(tacos)))
+    .catch((error) => dispatch(cocktailsFailed(error.message)));
 };
 
 export const addTacos = (tacos) => ({
   type: ActionTypes.ADD_TACOS,
   payload: tacos,
+});
+
+export const tacosFailed = (errMess) => ({
+  type: ActionTypes.TACOS_FAILED,
+  payload: errMess,
 });
 
 export const applyToJob =

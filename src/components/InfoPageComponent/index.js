@@ -1,7 +1,6 @@
 import React from "react";
 import storeFront from "../../images/betterfrontofrestaurant.jpg";
 import Features from "../FeatureComponent";
-import Location from "../LocationComponent";
 
 import {
   About,
@@ -10,9 +9,9 @@ import {
   AboutText,
   AboutImageWrap,
   AboutTextWrap,
-} from "./HomePageElements";
+} from "./InfoPageElements";
 
-const HomePage = ({ tacos, cocktails }) => {
+const InfoPage = ({ tacos, cocktails }) => {
   return (
     <>
       <About>
@@ -43,10 +42,8 @@ const HomePage = ({ tacos, cocktails }) => {
         features={cocktails}
         $color={false}
       />
-
-      <Location />
     </>
   );
 };
 
-export default HomePage;
+export default InfoPage;

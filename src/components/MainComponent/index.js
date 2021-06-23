@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import HomePage from "../HomePageComponent";
+import InfoPage from "../InfoPageComponent";
+import Location from "../LocationComponent";
 import {
   Splash,
   UpIcon,
@@ -56,7 +57,8 @@ class Main extends Component {
             <UpIcon $scrolling={this.state.scrolling} onClick={this.scrollUp} />
           </IconWrap>
         </Splash>
-        <HomePage tacos={this.props.tacos} cocktails={this.props.cocktails} />
+        <InfoPage tacos={this.props.tacos} cocktails={this.props.cocktails} />
+        <Location />
       </>
     );
   }

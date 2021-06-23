@@ -1,2 +1,4 @@
 export const ADD_COCKTAILS = "ADD_COCKTAILS";
+export const COCKTAILS_FAILED = "COCKTAILS_FAILED";
 export const ADD_TACOS = "ADD_TACOS";
+export const TACOS_FAILED = "TACOS_FAILED";
