@@ -57,7 +57,12 @@ class Main extends Component {
             <UpIcon $scrolling={this.state.scrolling} onClick={this.scrollUp} />
           </IconWrap>
         </Splash>
-        <InfoPage tacos={this.props.tacos} cocktails={this.props.cocktails} />
+        <InfoPage
+          tacos={this.props.tacos}
+          tErrMess={this.props.tErrMess}
+          cocktails={this.props.cocktails}
+          cErrMess={this.props.cErrMess}
+        />
         <Location />
       </>
     );

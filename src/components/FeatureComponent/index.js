@@ -13,7 +13,10 @@ import {
 } from "./FeatureElements";
 import { baseUrl } from "../../shared/baseUrl";
 
-const Features = ({ heading, features, subheading, $color }) => {
+const Features = ({ heading, subheading, features, $color, errMess }) => {
+  if (errMess) {
+    return <h1>{errMess}</h1>;
+  }
   return (
     <FeaturesFeature $color={$color}>
       <FeaturesHeading>{heading}</FeaturesHeading>

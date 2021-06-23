@@ -56,7 +56,7 @@ export const fetchTacos = () => (dispatch) => {
     )
     .then((response) => response.json())
     .then((tacos) => dispatch(addTacos(tacos)))
-    .catch((error) => dispatch(cocktailsFailed(error.message)));
+    .catch((error) => dispatch(tacosFailed(error.message)));
 };
 
 export const addTacos = (tacos) => ({

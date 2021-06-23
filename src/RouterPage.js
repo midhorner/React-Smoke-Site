@@ -59,7 +59,9 @@ class RouterPage extends Component {
             render={() => (
               <Main
                 tacos={this.props.tacos.tacos}
+                tErrMess={this.props.tacos.errMess}
                 cocktails={this.props.cocktails.cocktails}
+                cErrMess={this.props.cocktails.errMess}
               />
             )}
           />

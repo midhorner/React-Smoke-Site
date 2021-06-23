@@ -11,7 +11,7 @@ import {
   AboutTextWrap,
 } from "./InfoPageElements";
 
-const InfoPage = ({ tacos, cocktails }) => {
+const InfoPage = ({ cocktails, tacos, cErrMess, tErrMess }) => {
   return (
     <>
       <About>
@@ -35,12 +35,14 @@ const InfoPage = ({ tacos, cocktails }) => {
         heading="National Ultimate Chicken Week Is Back!"
         features={tacos}
         $color={true}
+        errMess={tErrMess}
       />
       <Features
         heading="It's Negroni Week Again!"
         subheading="Ask About Our 32oz Cocktails To Go!"
         features={cocktails}
         $color={false}
+        errMess={cErrMess}
       />
     </>
   );

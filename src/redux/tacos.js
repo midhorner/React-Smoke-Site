@@ -5,7 +5,7 @@ export const Tacos = (state = { errMess: null, tacos: [] }, action) => {
     case ActionTypes.ADD_TACOS:
       return { ...state, errMess: null, tacos: action.payload };
     case ActionTypes.TACOS_FAILED:
-      return { ...state, errMess: null, tacos: action.payload };
+      return { ...state, errMess: action.payload };
     default:
       return state;
   }
