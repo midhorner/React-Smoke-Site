@@ -4,7 +4,7 @@ import thunk from "redux-thunk";
 import logger from "redux-logger";
 import { Cocktails } from "./cocktails";
 import { Tacos } from "./tacos";
-import { ContactForm, JobApplication } from "./forms";
+import { ContactForm, JobApplication, ReservationForm } from "./forms";
 
 export const ConfigureStore = () => {
   const store = createStore(
@@ -14,6 +14,7 @@ export const ConfigureStore = () => {
       ...createForms({
         jobApplication: JobApplication,
         contactForm: ContactForm,
+        reservationForm: ReservationForm,
       }),
     }),
     applyMiddleware(thunk, logger)

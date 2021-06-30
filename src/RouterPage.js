@@ -4,10 +4,12 @@ import Main from "./components/MainComponent";
 import NavBar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Contact from "./components/ContactComponent";
+import Reservation from "./components/ReservationComponent";
 import { connect } from "react-redux";
 import {
   applyToJob,
   contactUs,
+  makeReservation,
   fetchCocktails,
   fetchTacos,
 } from "./redux/ActionCreators";
@@ -27,6 +29,8 @@ const mapDispatchToProps = {
   resetContactForm: () => actions.reset("contactForm"),
   fetchCocktails,
   fetchTacos,
+  makeReservation,
+  resetReservationForm: () => actions.reset("reservationForm"),
 };
 
 class RouterPage extends Component {
@@ -74,6 +78,16 @@ class RouterPage extends Component {
                 resetJobApplication={this.props.resetJobApplication}
                 contactUs={this.props.contactUs}
                 resetContactForm={this.props.resetContactForm}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/reservations"
+            render={() => (
+              <Reservation
+                makeReservation={this.props.makeReservation}
+                resetReservationForm={this.props.resetReservationForm}
               />
             )}
           />

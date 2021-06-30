@@ -12,3 +12,13 @@ export const ContactForm = {
   emailContact: "",
   messageContact: "",
 };
+
+export const ReservationForm = {
+  nameRes: "",
+  sizeRes: "",
+  dateRes: "",
+  timeRes: "",
+  phoneRes: "",
+  emailRes: "",
+  messageRes: "",
+};

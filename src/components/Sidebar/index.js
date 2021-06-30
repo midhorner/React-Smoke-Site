@@ -18,7 +18,7 @@ const Sidebar = ({ isSidebarOpen, toggle }) => {
           <SidebarLink to="/" onClick={toggle}>
             Menu
           </SidebarLink>
-          <SidebarLink to="/" onClick={toggle}>
+          <SidebarLink to="/reservations" onClick={toggle}>
             Reservations
           </SidebarLink>
           <SidebarLink to="/" onClick={toggle}>

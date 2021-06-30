@@ -144,3 +144,39 @@ export const contactUs = (name, phone, email, message) => () => {
       alert("Your message was unsuccesful: " + error.message);
     });
 };
+
+export const makeReservation =
+  (name, size, date, time, phone, email, info) => () => {
+    const newReservation = { name, size, date, time, phone, email, info };
+    return fetch(baseUrl + "newReservation", {
+      method: "POST",
+      body: JSON.stringify(newReservation),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then(
+        (response) => {
+          if (response.ok) {
+            alert(
+              "Thank you for your reservation\n" +
+                JSON.stringify(newReservation)
+            );
+            return response;
+          } else {
+            const error = new Error(
+              `Error ${response.status}: ${response.statusText}`
+            );
+            error.response = response;
+            throw error;
+          }
+        },
+        (error) => {
+          throw error;
+        }
+      )
+      .then((response) => response.json())
+      .catch((error) => {
+        alert("Your reservation was unsuccesful: " + error.message);
+      });
+  };
